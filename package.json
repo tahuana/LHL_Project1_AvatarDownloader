@@ -1,0 +1,19 @@
+{
+  "name": "github-avatar-downloader",
+  "version": "0.1.0",
+  "description": "LHL - first project: Given a GitHub repository name and owner, download all the contributors' profile images and save them to a subdirectory.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tahuana/github-avatar-downloader.git"
+  },
+  "author": "Tahuana Cirati",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tahuana/github-avatar-downloader/issues"
+  },
+  "homepage": "https://github.com/tahuana/github-avatar-downloader#readme"
+}
