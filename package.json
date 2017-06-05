@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/tahuana/github-avatar-downloader/issues"
   },
-  "homepage": "https://github.com/tahuana/github-avatar-downloader#readme"
+  "homepage": "https://github.com/tahuana/github-avatar-downloader#readme",
+  "dependencies": {
+    "request": "^2.81.0"
+  }
 }
