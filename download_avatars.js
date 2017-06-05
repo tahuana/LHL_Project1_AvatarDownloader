@@ -24,15 +24,15 @@ function downloadImageByURL(url, filePath) {
          throw err;
        })
        .on('response', function (response) {
-         console.log('Response Status Code: ', response.statusCode);
+         // console.log('Downloading images...');
        })
-       .pipe(fs.createWriteStream(filePath));
+       .pipe(fs.createWriteStream(filePath))
 }
 
 getRepoContributors("jquery", "jquery", function(err, result) {
   for (var i = 0; i < result.length; i++) {
-      // console.log(result[i].avatar_url);
-      // downloadImageByURL(result[i].avatar_url);
+      url = result[i].avatar_url;
+      filePath = "./avatars/" + result[i].login + ".jpg";
+      downloadImageByURL(url, filePath);
   }
-  downloadImageByURL("https://avatars2.githubusercontent.com/u/2741?v=3&s=466", "avatars/kvirani.jpg");
 });
