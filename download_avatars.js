@@ -1,4 +1,5 @@
 var request = require('request');
+var fs = require('fs');
 var GITHUB_USER = "tahuana";
 var GITHUB_TOKEN = "08e8cb7da8586800c80a4e22648500b94268d63b";
 
@@ -17,8 +18,21 @@ function getRepoContributors(repoOwner, repoName, cb) {
   });
 }
 
+function downloadImageByURL(url, filePath) {
+  request.get(url)
+       .on('error', function (err) {
+         throw err;
+       })
+       .on('response', function (response) {
+         console.log('Response Status Code: ', response.statusCode);
+       })
+       .pipe(fs.createWriteStream(filePath));
+}
+
 getRepoContributors("jquery", "jquery", function(err, result) {
   for (var i = 0; i < result.length; i++) {
-      console.log(result[i].avatar_url);
+      // console.log(result[i].avatar_url);
+      // downloadImageByURL(result[i].avatar_url);
   }
+  downloadImageByURL("https://avatars2.githubusercontent.com/u/2741?v=3&s=466", "avatars/kvirani.jpg");
 });
