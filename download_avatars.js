@@ -5,9 +5,8 @@ var GITHUB_USER = "tahuana";
 var GITHUB_TOKEN = "08e8cb7da8586800c80a4e22648500b94268d63b";
 var repoOwner = process.argv[2];
 var repoName = process.argv[3];
-// var mode = 0777 & ~process.umask();
 
-console.log('Welcome to the GitHub Avatar Downloader!\n');
+console.log('Welcome to the GitHub Avatar Downloader!');
 
 function getRepoContributors(repoOwner, repoName, cb) {
   if ((typeof repoOwner === 'undefined') || (typeof repoName === 'undefined')) {
