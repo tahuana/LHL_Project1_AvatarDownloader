@@ -1,8 +1,7 @@
 var request = require('request');
 var mkdirp = require('mkdirp');
 var fs = require('fs');
-var GITHUB_USER = "tahuana";
-var GITHUB_TOKEN = "08e8cb7da8586800c80a4e22648500b94268d63b";
+require('dotenv').config();
 var repoOwner = process.argv[2];
 var repoName = process.argv[3];
 
@@ -13,7 +12,7 @@ function getRepoContributors(repoOwner, repoName, cb) {
     error = "Error: The owner and name are required arguments.";
     cb(error);
   } else {
-    var requestURL = 'https://'+ GITHUB_USER + ':' + GITHUB_TOKEN + '@api.github.com/repos/' + repoOwner + '/' + repoName + '/contributors';
+    var requestURL = 'https://'+ process.env.GITHUB_USER + ':' + process.env.GITHUB_TOKEN + '@api.github.com/repos/' + repoOwner + '/' + repoName + '/contributors';
     var options = {
       url: requestURL,
       headers: { 'User-Agent': 'GitHub Avatar Downloader - Student Project' }
